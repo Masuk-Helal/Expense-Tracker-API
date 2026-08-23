@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import os
 
-SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:1234@127.0.0.1:3306/ExpanceTrakerDatabase'
+SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://root:1234@127.0.0.1:3306/ExpanceTrakerDatabase'
 
 
 # SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
