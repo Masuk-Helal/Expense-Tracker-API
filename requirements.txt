@@ -5,6 +5,7 @@ psycopg2-binary
 PyMySQL
 python-jose
 python-multipart
+email-validator
 SQLAlchemy
 uvicorn
 passlib
