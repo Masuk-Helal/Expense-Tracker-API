@@ -3,21 +3,21 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import os
 
-# SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:1234@localhost/ExpanceTrakerDatabase'
+SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:1234@127.0.0.1:3306/ExpanceTrakerDatabase'
 
 
-SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
+# SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
 
-if not SQLALCHEMY_DATABASE_URL:
-    raise RuntimeError("DATABASE_URL is not configured")
+# if not SQLALCHEMY_DATABASE_URL:
+#     raise RuntimeError("DATABASE_URL is not configured")
 
-connect_args = {}
+# connect_args = {}
 
-if SQLALCHEMY_DATABASE_URL.startswith("sqlite"):
-    connect_args = {"check_same_thread": False}
+# if SQLALCHEMY_DATABASE_URL.startswith("sqlite"):
+#     connect_args = {"check_same_thread": False}
 
 
-connect_args = {'check_same_thread': False} if SQLALCHEMY_DATABASE_URL.startswith('sqlite') else {}
+# connect_args = {'check_same_thread': False} if SQLALCHEMY_DATABASE_URL.startswith('sqlite') else {}
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
