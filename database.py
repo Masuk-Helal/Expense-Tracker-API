@@ -3,10 +3,14 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import os
 
-SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:1234@localhost/ExpanceTrakerDatabase'
+# SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:1234@localhost/ExpanceTrakerDatabase'
 
-# if SQLALCHEMY_DATABASE_URL.startswith('postgres://'):
-#     SQLALCHEMY_DATABASE_URL = SQLALCHEMY_DATABASE_URL.replace('postgres://', 'postgresql://', 1)
+
+SQLALCHEMY_DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://postgres:1234@localhost/ExpanceTrakerDatabase"
+)
+
 
 connect_args = {'check_same_thread': False} if SQLALCHEMY_DATABASE_URL.startswith('sqlite') else {}
 
