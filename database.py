@@ -19,6 +19,9 @@ SQLALCHEMY_DATABASE_URL = 'postgresql://postgres.ypvzfxqvibubthdzeolw:5700asdf@a
 
 # connect_args = {'check_same_thread': False} if SQLALCHEMY_DATABASE_URL.startswith('sqlite') else {}
 
+
+
+
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 SessionLocal = sessionmaker(autoflush=False, autocommit=False, bind=engine)
