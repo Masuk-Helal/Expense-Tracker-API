@@ -4,6 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 SQLALCHEMY_DATABASE_URL = 'postgresql://postgres.ypvzfxqvibubthdzeolw:An8yJn4kHrzJqxfJ@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres'
 
+
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 SessionLocal = sessionmaker(autoflush=False, autocommit=False, bind=engine)
